@@ -26,6 +26,40 @@
     .highlight {
       background-color: yellow;
     }
+    
+    /* ID selector */
+    #main-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    /* Descendant selector */
+    #main-content p {
+      line-height: 1.6;
+    }
+
+    /* Child selector */
+    ul > li {
+      color: blue;
+    }
+
+    /* Attribute selector */
+    a[target="_blank"] {
+      color: red;
+    }
+
+    /* Pseudo-class selector */
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Pseudo-element selector */
+    p::first-letter {
+      font-size: 200%;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
     
