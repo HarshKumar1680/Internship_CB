@@ -1,0 +1,17 @@
+.box{
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    margin: 20px;
+    padding:25px
+     
+}
+#brown{
+     background-color: brown;
+}
+#white{
+    background-color: white;
+}
+#aqua{
+    background-color:aqua
+}
