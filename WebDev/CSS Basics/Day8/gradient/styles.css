@@ -1,0 +1,8 @@
+.box{
+    border: 2px solid black;
+    height: 200px;
+    width: 300px;
+    background-image: linear-gradient(aqua, pink);
+    background-image: linear-gradient(to right,aqua, pink);
+    
+}
