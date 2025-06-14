@@ -4,5 +4,11 @@
     width: 300px;
     background-image: linear-gradient(aqua, pink);
     background-image: linear-gradient(to right,aqua, pink);
+    background-image: linear-gradient(to bottom,aqua, pink);
+    background-image: linear-gradient(to bottom right,aqua, pink);
+    background-image: linear-gradient(50deg,aqua, pink);
+    background-image: linear-gradient(50deg, aqua, pink, yellow);
+    background-image: linear-gradient(50deg, aqua, pink, yellow, green);
+    background-image: linear-gradient(50deg, rgba(0, 255, 255, 0.5), rgba(255, 192, 203, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 128, 0, 0.5));
     
 }
