@@ -1,0 +1,49 @@
+/* p{
+    position: static;
+} */
+
+
+ div{
+    width: 200px;
+    height:200px;
+    background-color: aqua;
+    border: 1px solid black;
+    display:inline-block;
+}
+/* #box1{
+   
+    position: relative;
+    left : 15px;
+    top:10px;
+
+}*/ 
+#box2{
+   
+    position: relative;
+    left : 25px;
+    top:20px;
+
+}#box3{
+   
+    position: relative;
+    left : 35px;
+    top:30px;
+
+}
+#box4{
+   
+    position: relative;
+    left : 45px;
+    top:40px;
+
+} 
+
+#box1{
+    position: fixed;
+}
+.wrapper{
+     width:100vw;
+    height:2000px;
+    background-color: rgb(229, 255, 0);
+    border: 1px solid black;
+ }
