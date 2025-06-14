@@ -22,19 +22,27 @@
     position: relative;
     left : 25px;
     top:20px;
-
-}#box3{
+}
+ /* }#box3{
    
     position: relative;
     left : 35px;
     top:30px;
 
-}
+} 
+#box3{
+   
+    position: absolute;
+    left : 45px;
+    top:60px;
+
+} */
+ 
+
 #box4{
    
-    position: relative;
-    left : 45px;
-    top:40px;
+    position: sticky;
+    top:0px
 
 } 
 
