@@ -1,0 +1,20 @@
+.container{
+    border: 1px solid black;
+    height: 400px;
+    width: 50vw;
+    display: flex;
+     /*display: row;
+    display: row-reverse;
+    display: column-reverse; */
+    /* flex-direction: row-reverse; */
+    /* flex-wrap:nowrap;
+    flex-wrap: wrap-reverse; */
+    /* flex-wrap: wrap; */
+    flex-flow: row wrap;
+}
+.box{
+    border: 1px solid green;
+    background-color: aqua;
+    width: 50px;
+    
+}
