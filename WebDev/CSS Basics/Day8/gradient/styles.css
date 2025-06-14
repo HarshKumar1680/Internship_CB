@@ -20,3 +20,12 @@
     background-image: radial-gradient(circle, red 10%, yellow 52%, green 80%, blue 95%,black 1%);
 
 }
+.div1{
+    border: 2px solid black;
+    width: 500px;
+    height: 400px;
+    /* background-image: conic-gradient(red, yellow, green, blue, black); */
+    background-image: conic-gradient( aqua, pink, yellow, green);
+    background-image: conic-gradient(from 90deg, aqua, pink, yellow, green);
+    background-image: conic-gradient(from 90deg, rgba(0, 255, 255, 0.5), rgba(255, 192, 203, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 128, 0, 0.5));
+    }
