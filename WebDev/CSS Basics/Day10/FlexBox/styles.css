@@ -7,7 +7,7 @@
      /*display: row;
     display: row-reverse;
     display: column-reverse; */
-    
+
     /* flex-direction: row-reverse; */
     /* flex-wrap:nowrap;
     flex-wrap: wrap-reverse; */
@@ -23,11 +23,12 @@
     justify-content: space-between;
 
     <!--cross axis-->
-    align-items: flex-start;
+    
     align-items: flex-end;
     align-items: baseline; */
+    align-items: flex-start;
     justify-content: center;
-    align-items: center;  
+    /* align-items: center;   */
     gap: 10px;
 
 }
@@ -36,4 +37,16 @@
     background-color: aqua;
     width: 50px;
 
+}
+#box1{
+    order: 1;
+}
+#box2{
+    order: 2;
+}
+#box3{
+    order: 4;
+}
+#box4{
+    order: 3;
 }
