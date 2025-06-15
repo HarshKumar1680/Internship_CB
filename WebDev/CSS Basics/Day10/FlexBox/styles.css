@@ -1,3 +1,8 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 .container{
     border: 1px solid black;
     height: 400px;
@@ -11,8 +16,8 @@
     /* flex-direction: row-reverse; */
     /* flex-wrap:nowrap;
     flex-wrap: wrap-reverse; */
-    /* flex-wrap: wrap; */
-    flex-flow: row wrap;
+    flex-wrap: wrap;
+    /* flex-flow: row wrap; */
     /* justify-content: flex-start;
     justify-content: flex-end;
 
@@ -29,23 +34,29 @@
     align-items: flex-start;
     justify-content: center;
     /* align-items: center;   */
-    gap: 10px;
+    /* gap: 10px; */
 
 }
 .box{
     border: 1px solid green;
     background-color: aqua;
     width: 50px;
-
+    flex-basis: 50%;
 }
 #box1{
     order: 1;
+   /* flex-grow: 1;  This will allow box1 to grow and take up more space */
+   
+    
+   /*  flex:4 ;  This is a shorthand for flex-grow, flex-shrink, and flex-basis */
 }
 #box2{
     order: 2;
+    /* flex-shrink: 4; This will allow box1 to shrink if necessary */
 }
 #box3{
     order: 4;
+   /*  flex-basis: 100px; This sets the initial size of box1 */
 }
 #box4{
     order: 3;
