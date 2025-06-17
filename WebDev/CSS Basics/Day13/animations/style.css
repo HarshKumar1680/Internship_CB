@@ -1,0 +1,24 @@
+/* provide global scope to the variable by defining in root for apply to all */
+/* :root{
+    --yellow:#faf200;
+} */
+
+*{
+    --yellow:#faf200;
+}
+
+/* both above method are same */
+
+.container{
+    border: 2px solid blueviolet;
+    background-color: brown;
+    height: 400px;
+    width: 400px;
+    background-color: var(--yellow);
+}
+.box{
+     border: 2px solid rgb(255, 255, 255);
+    background-color: rgb(61, 165, 42);
+    --yellow:#faf200;
+    color:var(--yellow)   ;
+}
