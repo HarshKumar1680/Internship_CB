@@ -1,24 +1,34 @@
-/* provide global scope to the variable by defining in root for apply to all */
-/* :root{
-    --yellow:#faf200;
-} */
-
 *{
-    --yellow:#faf200;
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
 }
-
-/* both above method are same */
-
 .container{
-    border: 2px solid blueviolet;
-    background-color: brown;
-    height: 400px;
-    width: 400px;
-    background-color: var(--yellow);
+    background-color: blueviolet;
+    border:2px solid black;
+    height: 216px;
+    width:100%;
+
 }
 .box{
-     border: 2px solid rgb(255, 255, 255);
-    background-color: rgb(61, 165, 42);
-    --yellow:#faf200;
-    color:var(--yellow)   ;
+    border: solid green;
+    height:212px;
+    width:212px;
+    border: 2px solid black;
+    background-color: aquamarine;
+
+    animation-name: harsh;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: 1s ease-in;
+    animation-direction:alternate-reverse;
+    
 }
+@keyframes harsh{
+    from{
+        width:212px; 
+    }
+    to{
+        width:800px;
+    }
+}    
