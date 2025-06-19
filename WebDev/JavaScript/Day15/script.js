@@ -110,6 +110,14 @@ for (let value of Object.entries(rectangle)) {
 }
 
 
+// if ('length' in rectangle) {
+//     console.log('Exists in rectangle');
+// }else {
+//     console.log('Not exist in rectangle');
+// }
+
+
+
 
 
 
