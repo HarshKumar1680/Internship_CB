@@ -1,6 +1,5 @@
 let todos = [];
 
-// Load tasks from localStorage on page load
 window.onload = function () {
   const storedTodos = localStorage.getItem('todos');
   if (storedTodos) {
