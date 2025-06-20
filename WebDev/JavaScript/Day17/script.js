@@ -9,15 +9,15 @@ function run() {
 //Named function expression
 
 // stand(); not defined in assignment context
-let stand = function walk () {
-    console.log("Walking...");
-}
-console.log(stand); 
-stand();  // This will work as the function is assigned to a variable
+// let stand = function walk () {
+//     console.log("Walking...");
+// }
+// console.log(stand); 
+// stand();  // This will work as the function is assigned to a variable
 
 //annonymous function
 let greet = function() {
     console.log("Hello, Anonymous Function!");
 }
-greet(); // This will work as the function is called after its declaration
+setTimeout(greet,5000 ); // This will work as the function is called after its declaration
 
