@@ -92,10 +92,10 @@
 // console.log(a.value);
 
 
-let rectangle= {
-    length:2,
-    breadth:4
-};
+// let rectangle= {
+//     length:2,
+//     breadth:4
+// };
 // //for in loop generally for objects
 // for(let key in rectangle){
 //     //keys are reflected through key variable
@@ -105,9 +105,9 @@ let rectangle= {
 
 
 //  for-of loop generally for arrays or iterable objects
-for (let value of Object.entries(rectangle)) {
-    console.log(value);
-}
+// for (let value of Object.entries(rectangle)) {
+//     console.log(value);
+// }
 
 
 // if ('length' in rectangle) {
@@ -115,6 +115,45 @@ for (let value of Object.entries(rectangle)) {
 // }else {
 //     console.log('Not exist in rectangle');
 // }
+
+
+//OBJECT CLONING
+//-> CLONING
+
+// let src = {
+//     a:10,
+//     b:20,
+//     c:30
+// };
+//  let dest= {};
+// for (let key in src){
+//     dest[key]= src[key];
+//     console.log(key, dest[key]);
+//     }
+
+
+//-> ASSIGNING
+// let src = {
+//     a:10,
+//     b:20,
+//     c:30
+// };
+// let dest = Object.assign({},src);
+// console.log(dest);
+// src.a++;
+// console.log(dest);
+
+// SPREAD
+let src = {
+    a:10,
+    b:20,
+    c:30
+};
+let dest = {...src};
+console.log(dest);
+src.a++;
+
+console.log(dest);
 
 
 
