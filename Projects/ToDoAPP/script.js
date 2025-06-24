@@ -36,6 +36,10 @@ function saveAndRender() {
 function renderTodos() {
   const list = document.getElementById('todo-list');
   list.innerHTML = '';
+  if (todos.length === 0) {
+    list.innerHTML = '<li class="empty">No tasks available</li>';
+    return;
+  }  
   todos.forEach((todo, index) => {
     const li = document.createElement('li');
     li.className = todo.completed ? 'completed' : '';
