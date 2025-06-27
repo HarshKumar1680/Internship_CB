@@ -11,4 +11,3 @@ class Car {
 }
 
 const c1 = new Car('BMW', 1000, true);
-
