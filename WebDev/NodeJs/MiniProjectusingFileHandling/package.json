@@ -9,6 +9,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "jimp": "^1.6.0"
+    "jimp": "^0.22.10"
   }
 }
