@@ -1,5 +1,5 @@
 const fs = require('fs');
-
+const Jimp = require('jimp');
 // fs.readFile('Image.jpg',{
 //     encoding:'base64'
 // },(err,data)=>{
@@ -28,4 +28,17 @@ fs.writeFileSync('Image1.jpg',buffer);
 
 
 
+// open a file called "lenna.png"
+// const image = await Jimp.read("image.jpg");
+
+// image.resize(256, 256); // resize
+
+// await image.write("image-small.jpg"); // save
+jimp.read('image.jpg', (err, image) => {
+    if (err) throw err;
+    image
+    .resize(257, 256)
+    .quality(60)
+    .write('imagesmall.jpg');
+});
 
