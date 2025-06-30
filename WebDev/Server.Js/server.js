@@ -3,7 +3,10 @@ const port = 8080;
 
 const server =  http.createServer((req,res) =>{
     console.log(req.url)
-    res.end('hello, here is my requested data');
+    res.writeHead(200,{
+        "Content-type" : 'text/html'
+    });
+    res.end('<h1>hello, here is my requested data</h1>');
 });
 server.listen(port,(err)=>{
     if(err){
