@@ -7,7 +7,11 @@ const server =  http.createServer((req,res) =>{
     res.writeHead(200,{
         "Content-type" : 'text/html'
     });
-    fs.readFile('./index.html',(err,data)=>{
+    if(req.url == '/') file = 'index.html';
+    else if(req.url == '/profile') file = 'profile.html';
+    else file = 'signin.html';
+
+    fs.readFile(file,(err,data)=>{
         if(err){
             console.log(err);
             return;
