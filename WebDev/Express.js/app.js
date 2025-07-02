@@ -1,6 +1,7 @@
 const express = require('express');
 const PORT = 8888;
 const app = express();
+const path = require('path');
 
 app.get(`/`, (req, res) => {
     // console.log(__dirname);
@@ -22,7 +23,7 @@ app.get(`/`, (req, res) => {
 // })
 
 app.get('/file',(req,res)=>{
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(path.join(__dirname + '/index.html'));
 })
 
 app.get('/server.js',(req,res)=>{
