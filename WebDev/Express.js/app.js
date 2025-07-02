@@ -3,9 +3,10 @@ const PORT = 8888;
 const app = express();
 
 app.get(`/`, (req, res) => {
-    console.log(req);
+    // console.log(__dirname);
     res.send(`<h1>Hello Harsh</h1>`);
-})
+});
+
 
 // app.get(`/greet/:name`, (req, res) => {
 //     console.log(req);
@@ -14,10 +15,18 @@ app.get(`/`, (req, res) => {
 // })
 
 
-app.get(`/greet`, (req, res) => {
-    console.log(req);
-    res.send(`Hello! Good ${req.query.x} ${req.query.name}`);
+// app.get(`/greet`, (req, res) => {
+//     console.log(req);
+//     res.send(`Hello! Good ${req.query.x} ${req.query.name}`);
 
+// })
+
+app.get('/file',(req,res)=>{
+    res.sendFile(__dirname + '/index.html');
+})
+
+app.get('/server.js',(req,res)=>{
+    res.send(`console.log('Here is the requested JS')`)
 })
 
 app.listen(PORT, (err) => {
