@@ -14,7 +14,9 @@ app.get(`/`, (req, res) => {
 })
 
 app.get('/learnhbs',(req,res)=>{
-    res.render('index.hbs');
+    res.render('index.hbs', { 
+        title: "My Page"
+    });
 })
 
 
