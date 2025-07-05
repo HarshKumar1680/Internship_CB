@@ -7,3 +7,7 @@ let users = [
     {name: 'himanshu', subkect: 'deepdata', hobby: 'esports'},
     {name: 'shivam', subkect: 'deepdata', hobby: 'sports'}
 ]
+db.teachers.updateOne(
+  { name: 'ritik' },
+  { $set: { hobby: 'badminton' } }
+)
