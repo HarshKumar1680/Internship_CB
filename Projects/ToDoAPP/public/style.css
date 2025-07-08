@@ -10,7 +10,7 @@ body {
   align-items: center;
 }
 h1 {
-  color: #333;
+  color: #000000;
 }
 .todo-container {
   background: #fff;
@@ -30,13 +30,13 @@ input[type="text"] {
 button {
   padding: 10px;
   border: none;
-  background-color: #28a745;
-  color: white;
+  background-color: #f0f0f0;
+  color: rgb(0, 0, 0);
   border-radius: 5px;
   cursor: pointer;
 }
 button:hover {
-  background-color: #218838;
+  background-color: #dbdbdb;
 }
 ul {
   list-style-type: none;
@@ -57,9 +57,25 @@ li.completed {
   background: #d4edda;
 }
 .delete {
-  background-color: #dc3545;
+  background-color: #ff0019;
   margin-left: 10px;
+  color:#ffffff
 }
 .delete:hover {
   background-color: #c82333;
+}
+
+
+button {
+  padding: 6px 8px;
+  font-size: 14px;
+}
+
+
+.hide-up {
+  visibility: hidden;
+}
+
+.hide-down {
+  visibility: hidden;
 }

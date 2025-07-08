@@ -13,8 +13,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // In-memory todo list
 let todos = [
-  { id: '1', name: 'Task-1' },
-  { id: '2', name: 'Task-2' }
+
 ];
 
 // Get all todos

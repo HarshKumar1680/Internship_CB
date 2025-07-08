@@ -20,11 +20,10 @@ function addTodo() {
   const task = input.value;
   if (!task) return;
 
-  // Send JSON instead of URL-encoded string
   axios.post('/addtodo', { name: task })
     .then(() => {
       input.value = '';
-      fetchTodos(); // Reload the list
+      fetchTodos(); // refresh
     })
     .catch(err => {
       console.error('Error adding todo:', err.response?.data || err.message);
@@ -32,14 +31,27 @@ function addTodo() {
 }
 
 function deleteTodoById(id) {
-  // Send JSON instead of URL-encoded string
   axios.post('/deletetodo', { id })
     .then(() => {
-      fetchTodos(); // Reload list after deletion
+      fetchTodos(); // refresh
     })
     .catch(err => {
       console.error('Error deleting todo:', err.response?.data || err.message);
     });
+}
+
+// 🆕 Move task up in the list
+function moveUp(index) {
+  if (index <= 0) return; // already at top
+  [todos[index - 1], todos[index]] = [todos[index], todos[index - 1]];
+  renderTodos();
+}
+
+// 🆕 Move task down in the list
+function moveDown(index) {
+  if (index >= todos.length - 1) return; // already at bottom
+  [todos[index + 1], todos[index]] = [todos[index], todos[index + 1]];
+  renderTodos();
 }
 
 function renderTodos() {
@@ -51,13 +63,21 @@ function renderTodos() {
     return;
   }
 
-  todos.forEach(todo => {
+  todos.forEach((todo, index) => {
     const li = document.createElement('li');
-    li.className = '';
+
+    const isFirst = index === 0;
+    const isLast = index === todos.length - 1;
+
     li.innerHTML = `
       <span style="flex-grow:1;">${todo.name}</span>
-      <button class="delete" onclick="deleteTodoById('${todo.id}')">X</button>
+      <div style="display:flex; gap:5px;">
+        <button onclick="moveUp(${index})" class="${isFirst ? 'hide-up' : ''}">⬆️</button>
+        <button onclick="moveDown(${index})" class="${isLast ? 'hide-down' : ''}">⬇️</button>
+        <button class="delete" onclick="deleteTodoById('${todo.id}')">X</button>
+      </div>
     `;
+
     list.appendChild(li);
   });
 }
