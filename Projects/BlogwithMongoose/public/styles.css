@@ -52,3 +52,7 @@ h1 {
 .blog-form button:hover {
     background-color: #0056b3;
 }
+#description {
+  width: 500px;
+  height: 70px;
+}

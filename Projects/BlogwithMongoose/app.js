@@ -1,46 +1,56 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const Blog = require('./models/blogs');
+
 const app = express();
 const PORT = 4444;
-
-const blogSchema = new mongoose.Schema({
-    title: String,
-    description: String,
-}, { timestamps: true });
-
-const Blog = mongoose.model('Blog', blogSchema);
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'hbs');
 
-// Routes
-app.get('/blogs', (req, res) => {
-    res.render('blogs');
+// Redirect root to /blogs
+app.get('/', (req, res) => {
+    res.redirect('/blogs');
 });
 
+// GET route to render form
+app.get('/blogs', async (req, res) => {
+    try {
+        const blogs = await Blog.find().sort({ createdAt: -1 });
+        res.render('blogs', { blogs }); // pass blogs to view
+    } catch (err) {
+        console.error("Error fetching blogs:", err);
+        res.status(500).send("Error fetching blogs");
+    }
+});
+
+// POST route to save blog
 app.post('/blogs', async (req, res) => {
     const { title, description } = req.body;
 
     try {
         const blog = new Blog({ title, description });
         await blog.save();
-        res.send('Blog Saved Successfully!');
+        res.redirect('/blogs'); // ✅ redirect after saving
     } catch (err) {
-        console.error(err);
-        res.status(500).send('Error saving blog');
+        console.error('Mongoose Save Error:', err);
+        res.status(500).send('Error saving blog: ' + err.message);
     }
 });
 
-mongoose.connect('mongodb://127.0.0.1:27017/blogApp', {
+
+// Connect to MongoDB
+mongoose.connect('mongodb://127.0.0.1:27017/blogapp', {
     useNewUrlParser: true,
     useUnifiedTopology: true
-}).then(() => console.log("MongoDB Connected"))
-  .catch(err => console.error("MongoDB Error:", err));
-
-
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+}).then(() => {
+    console.log('MongoDB Connected');
+    app.listen(PORT, () => {
+        console.log(`Server running at http://localhost:${PORT}`);
+    });
+}).catch(err => {
+    console.error('MongoDB connection error:', err);
 });
