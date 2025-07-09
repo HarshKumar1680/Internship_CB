@@ -1,0 +1,21 @@
+ <h1>Create New Actor</h1>
+
+<form action="/actors" method="POST" class="blog-form">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input name="name" id="name" placeholder="Enter Actor Name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="age">Age:</label>
+    <input name="age" id="age" type="number" placeholder="Enter Age" required>
+  </div>
+
+  <div class="form-group">
+    <label for="movies">Movies:</label>
+    <input name="movies" id="movies" placeholder="Comma-separated movie names (optional)">
+  </div>
+
+  <button type="submit">Add Actor</button>
+</form>
+
