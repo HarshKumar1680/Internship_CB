@@ -1,0 +1,18 @@
+ <h1>Actors List</h1>
+
+<ul>
+  {{#each actors}}
+    <li>
+      <strong>{{this.name}}</strong> (Age: {{this.age}})
+      {{#if this.movies.length}}
+        <br><em>Movies:</em> {{this.movies}}
+      {{/if}}
+      <form action="/actors/{{this._id}}/delete" method="POST" style="display:inline;">
+        <button>Delete</button>
+      </form>
+    </li>
+  {{/each}}
+</ul>
+
+<a href="/actors/new">Add New Actor</a>
+

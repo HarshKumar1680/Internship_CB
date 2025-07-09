@@ -1,0 +1,43 @@
+ <h1>Welcome to the Blog</h1>
+
+<form action="/blogs" method="POST" class="blog-form">
+  <div class="form-group">
+    <label for="title">Title:</label>
+    <input name="title" id="title" placeholder="Enter Title" type="text" required>
+  </div>
+
+  <div class="form-group">
+    <label for="actor">Actor:</label>
+    <input name="actor" id="actor" placeholder="Enter Actor Name" type="text" required>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea name="description" id="description" placeholder="Enter Description" rows="4" cols="50" required></textarea>
+  </div>
+
+  <button type="submit">Add Blog</button>
+</form>
+
+<hr>
+<h2>All Blogs</h2>
+
+{{#if blogs.length}}
+  <ul>
+    {{#each blogs}}
+      <li>
+        <strong>{{this.title}}</strong><br>
+        <em>Actor:</em> {{this.actor}}<br>
+        {{this.description}}<br>
+        <small>{{this.createdAt}}</small><br>
+        <form action="/blogs/{{this._id}}/delete" method="POST" style="display:inline;">
+          <button>Delete</button>
+        </form>
+        <a href="/blogs/{{this._id}}/edit">Edit</a>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No blogs yet.</p>
+{{/if}}
+
